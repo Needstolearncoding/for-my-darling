@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Letter</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #fce7e7; /* Light pink background color */
+            font-family: Arial, sans-serif; /* Use Arial font */
+            position: relative;
+        }
+
+        /* Heart button styles */
+        .heart-button {
+            background: none;
+            border: none;
+            color: #ff4d4d; /* Heart button color */
+            font-size: 100px; /* Heart button size */
+            cursor: pointer;
+            outline: none;
+            position: relative;
+            transition: color 0.5s; /* Transition effect for color change */
+            animation: pulse 2s infinite alternate; /* Apply pulsating animation */
+            z-index: 1; /* Ensure button stays above other elements */
+        }
+
+        .heart-button.active {
+            color: #ff1a1a; /* Darken color when active */
+            animation: none; /* Stop pulsating animation when active */
+        }
+
+        /* Heart icon styles */
+        .heart {
+
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: color 0.5s; /* Transition effect for color change */
+            z-index: 1; /* Ensure heart stays above other elements */
+        }
+
+        /* Love letter container styles */
+        #letter {
+            display: none; /* Initially hidden */
+            text-align: center; /* Align text to the center */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: #fce7e7; /* White background color */
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+            color: #ff0000; /* Dark text color */
+            width: 80%; /* Set the width of the letter */
+            max-width: 600px; /* Limit the maximum width of the letter */
+            z-index: 1; /* Ensure letter stays above other elements */
+            opacity: 0; /* Initially hidden */
+            transition: opacity 0.5s ease-in-out; /* Transition effect for opacity change */
+            font-family: cursive;
+            font-style: italic;
+        }
+
+        #letter.active {
+            opacity: 1; /* Make the letter fully visible when active */
+        }
+
+        /* Decorative element styles */
+        .decorative-element {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0; /* Behind other elements */
+        }
+
+        .decorative-element::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 300%;
+            height: 300%;
+            background-image: radial-gradient(#ff9999, transparent); /* Radial gradient effect */
+            border-radius: 50%;
+        }
+
+        /* Pulse animation */
+        @keyframes pulse {
+            from {
+                transform: scale(1); /* Initial scale */
+            }
+            to {
+                transform: scale(1.05); /* Scale up slightly */
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Heart button with onclick event to toggle the love letter -->
+    <button class="heart-button" onclick="toggleLetter()">
+        <div class="heart">&#10084;</div>
+    </button>
+    <!-- Love letter container -->
+    <div id="letter">
+        <!-- Content of the love letter -->
+        <h1>My Love</h1>
+        <p>As I sit down to write this letter, my heart is overflowing with feelings for you. Every moment we share is a treasure to me, and I couldn't imagine my life without you by my side.</p>
+        <p>Your laughter brings joy to my days, and your touch makes everything feel right. In your presence, I feel complete, like I've finally found where I belong.</p>
+        <p>I want you to know how much you mean to me. You are my everything, my confidant, and my best friend. With you, I feel like I can conquer the world, and I am endlessly grateful for your love.</p>
+        <p>I look forward to going through life with you and the memories we'll create along the way. No matter what life throws our way, I know that as long as we have each other, everything will be okay.</p>
+        <p>I love you more than words can express, and I can't wait to spend the rest of my life loving you.</p>
+
+        
+        <p>I love you</p>
+        <p>Forever and always,</p>
+        <p>Your beloved David</p>
+    </div>
+
+    <!-- JavaScript code to toggle the love letter -->
+    <script>
+        function toggleLetter() {
+            var letter = document.getElementById("letter");
+            if (letter.style.display === "none" || letter.style.display === "") {
+                letter.style.display = "block";
+                letter.classList.add("active");
+                document.querySelector(".heart-button").classList.add("active");
+            } else {
+                letter.style.display = "none";
+                letter.classList.remove("active");
+                document.querySelector(".heart-button").classList.remove("active");
+            }
+        }
+    </script>
+
+    <!-- Decorative element -->
+    <div class="decorative-element"></div>
+</body>
+</html>
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Letter</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #fce7e7; /* Light pink background color */
+            font-family: Arial, sans-serif; /* Use Arial font */
+            position: relative;
+            overflow: hidden; /* Hide overflowing hearts */
+        }
+
+        /* Heart button styles... */
+
+        /* Love letter container styles... */
+
+        /* Decorative element styles */
+        .decorative-element {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0; /* Behind other elements */
+        }
+
+        .heart-background {
+            position: absolute;
+            width: 20px; /* Heart size */
+            height: 20px; /* Heart size */
+            background-color: transparent; /* Transparent background */
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="%23ef0000" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>'); /* Heart SVG */
+            background-repeat: no-repeat;
+            background-size: contain;
+            animation: float 4s infinite ease-in-out; /* Floating animation */
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-100vh) rotate(360deg); /* Move heart up and rotate */
+            }
+            100% {
+                transform: translateY(0) rotate(720deg); /* Return to initial position and rotation */
+            }
+        }
+
+        /* Decorative element styles */
+        .decorative-element::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 300%;
+            height: 300%;
+            background-image: radial-gradient(#ff9999, transparent); /* Radial gradient effect */
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <!-- Heart button with onclick event to toggle the love letter... -->
+
+    <!-- Love letter container... -->
+
+    <!-- JavaScript code to toggle the love letter... -->
+
+    <!-- Decorative element -->
+    <div class="decorative-element">
+        <!-- Small hearts as background -->
+        <!-- Adjust the number and position of hearts as needed -->
+        <div class="heart-background" style="top: 10%; left: 20%;"></div>
+        <div class="heart-background" style="top: 20%; left: 70%;"></div>
+        <div class="heart-background" style="top: 30%; left: 50%;"></div>
+        <div class="heart-background" style="top: 40%; left: 40%;"></div>
+        <div class="heart-background" style="top: 50%; left: 10%;"></div>
+        <div class="heart-background" style="top: 60%; left: 80%;"></div>
+        <div class="heart-background" style="top: 70%; left: 30%;"></div>
+        <div class="heart-background" style="top: 80%; left: 60%;"></div>
+        <div class="heart-background" style="top: 15%; left: 45%;"></div>
+        <div class="heart-background" style="top: 75%; left: 25%;"></div>
+        <div class="heart-background" style="top: 35%; left: 65%;"></div>
+        <div class="heart-background" style="top: 55%; left: 55%;"></div>
+        <div class="heart-background" style="top: 5%; left: 85%;"></div>
+        <div class="heart-background" style="top: 65%; left: 15%;"></div>
+        <div class="heart-background" style="top: 45%; left: 75%;"></div>
+        <div class="heart-background" style="top: 25%; left: 35%;"></div>
+    </div>
+</body>
+</html>
